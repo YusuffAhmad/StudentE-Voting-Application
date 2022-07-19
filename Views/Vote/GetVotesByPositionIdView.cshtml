@@ -1,0 +1,52 @@
+﻿@model IEnumerable<STUDENTEVOTINGAPP.DTOs.VoteDto.VoteDto>
+<div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    ID
+                </th>
+                <th>
+                    Election Name
+                </th>
+                <th>
+                    Position Name
+                </th>
+                <th>
+                    Contestant Name
+                </th>
+                <th>
+                    Contestant MatricNumber
+                </th>
+                <th>
+                    Votes
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var vote in Model)
+            {
+                <tr>
+                    <th>
+                        @vote.Id
+                    </th>
+                    <th>
+                        @vote.ElectionName
+                    </th>
+                    <th>
+                        @vote.PositionName
+                    </th>
+                    <th>
+                        @vote.CandidateName
+                    </th>
+                    <th>
+                        @vote.MatricNumber
+                    </th>
+                    <th>
+                        @vote.VoteCount
+                    </th>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

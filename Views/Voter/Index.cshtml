@@ -1,0 +1,47 @@
+﻿@model IList<STUDENTEVOTINGAPP.Entities.Voter>
+<div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    ID
+                </th>
+                <th>
+                    FullName
+                </th>
+                <th>
+                    Matric Number
+                </th>
+                <th>
+                    Details
+                </th>
+                <th>
+                    Delete
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var voter in Model)
+            {
+                <tr>
+                    <th>
+                        @voter.Id
+                    </th>
+                    <th>
+                        @voter.FirstName @voter.LastName
+                    </th>
+                    <th>
+                        @voter.MatricNumber
+                    </th>
+                    <th>
+                        <a asp-action="Get" asp-route-id="@voter.Id" style="color:blue" class="btn btn-primary">View</a>
+                    </th>
+                    <th>
+                        <a asp-action="Delete" asp-route-id="@voter.Id" style="color:red" class="btn btn-danger">Delete</a>
+                    </th>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+<a asp-controller="Admin" asp-action="Index">Go Back Dashboard</a>

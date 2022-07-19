@@ -1,0 +1,26 @@
+﻿@model STUDENTEVOTINGAPP.DTOs.AdminDto.AdminRequestModel
+<div class="text text-center" style="align-content: center">
+    <h1>
+        Login
+    </h1>
+    <form asp-action="Login" class="text text-center" style="align-content: center">
+        @if (ViewBag.Message != null)
+        {
+            <div style="color:red" font-weight: bolder; padding: 5px>
+                <p class="alert alert-warning alert-dismissible" role="alert">@ViewBag.Message</p>
+                <label style="text-align: center"> </label>
+            </div>
+        }
+        <div class="text text-center" style="align-content: center">
+            <label>MatricNumber</label>
+            <input type="text" name="MatricNumber" asp-for="MatricNumber" required/>
+        </div>
+        <div class="text text-center" style="align-content: center">
+            <label>Password</label>
+            <input type="password" name="Password" required/>
+        </div>
+        <div class="text text-center" style="align-content: center">
+            <input type="submit" value="Login" class="btn btn-primary" />
+        </div>
+    </form>
+</div>

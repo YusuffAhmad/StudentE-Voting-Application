@@ -1,0 +1,24 @@
+﻿@model STUDENTEVOTINGAPP.DTOs.AdminDto.AdminDto
+<div>
+    <dl>
+        <dd>
+            ID
+        </dd>
+        <dt>
+            @Model.ID
+        </dt>
+        <dd>
+            FullName
+        </dd>
+        <dt>
+            @Model.FullName
+        </dt>
+        <dd>
+            MatricNum
+        </dd>
+        <dt>
+            @Model.MatricNum
+        </dt>
+    </dl>
+</div>
+<a asp-controller="Admin" asp-action="Index">Go Back Dashboard</a>

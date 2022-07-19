@@ -1,0 +1,61 @@
+﻿@model IList<STUDENTEVOTINGAPP.DTOs.ElectionDto.ElectionDto>
+    <div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        ID
+                    </th>
+                    <th>
+                        Name
+                    </th>
+                    <th>
+                        ElectionBegins
+                    </th>
+                    <th>
+                        ElectionCloses
+                    </th>
+                    <th>
+                        Details
+                    </th>
+                    <th>
+                        Update
+                    </th>
+                    <th>
+                        Delete
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var election in Model)
+                {
+                    <tr>
+                        <th>
+                            @election.Id
+                        </th>
+                        <th>
+                            @election.Name
+                        </th>
+                        <th>
+                            @election.ElectionOpenDate
+                        </th>
+                        <th>
+                            @election.ElectionCloseDate
+                        </th>
+                        <th>
+                            <a asp-action="Get" asp-route-id="@election.Id" style="color:white" class="btn btn-primary">Details</a>
+                        </th>
+                        <th>
+                            <a asp-action="Edit" asp-route-id="@election.Id" style="color:white" class="btn btn-primary">Update</a>
+                        </th>
+                        <th>
+                            <a asp-action="Delete" asp-route-id="@election.Id" style="color:white" class="btn btn-danger">Delete Position</a>
+                        </th>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <div>
+        <a asp-controller="Admin" asp-action="Index">Back to DashBoard</a>
+    </div>

@@ -1,0 +1,43 @@
+﻿@model STUDENTEVOTINGAPP.DTOs.CandidateDto.CreateCandidateRequestModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Candidate Registration</h1>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            @if (ViewBag.Message != null)
+            {
+                <div style="color:red" font-weight: bolder; padding: 5px>
+                    <p class="alert alert-warning alert-dismissible" role="alert">@ViewBag.Message</p>
+                    <label style="text-align: center"> </label>
+                </div>
+            }
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="ElectionName" class="control-label"></label>
+                <select style="scrollbar-3dlight-color:blue" asp-for="ElectionId" asp-items="ViewBag.Elections"> </select>
+                <span asp-validation-for="ElectionId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PositionName" class="control-label"></label>
+                <select style="scrollbar-3dlight-color:blue" asp-for="PositionId" asp-items="ViewBag.Positions"> </select>
+                <span asp-validation-for="PositionId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-controller="Voter" asp-action="VoterPage">Back to DashBoard</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

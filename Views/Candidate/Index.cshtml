@@ -1,0 +1,53 @@
+﻿@model IList<STUDENTEVOTINGAPP.DTOs.CandidateDto.CandidateDto>
+<div>
+    <<table class="table">
+    <thead>
+        <tr>
+            <th>
+                ID
+            </th>
+            <th>
+                FullName
+            </th>
+            <th>
+                Matric Number
+            </th>
+            <th>
+                Details
+            </th>
+            <th>
+                Delete
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var candidate in Model)
+        {
+        <tr>
+            <th>
+                @candidate.ID
+            </th>
+            <th>
+                @candidate.FullName
+            </th>
+            <th>
+                @candidate.MatricNum
+            </th>
+            <th>
+                <a asp-action="Get" asp-route-id="@candidate.ID" style="color:white" class="btn btn-primary">View</a>
+            </th>
+            <th>
+                <a asp-action="Delete" asp-route-id="@candidate.ID" style="color:white" class="btn btn-danger">Delete Admin</a>
+            </th>
+        </tr>
+        }
+    </tbody>
+</table>
+</div>
+@*<div>
+    <a asp-action="GetCandidatesByElectionAndPositionIds" style="color:white" class="btn btn-info">Get Candidates By Election And Position Ids</a>
+    <a asp-action="GetCandidatesByPositionId" style="color:white" class="btn btn-info">Get Candidates By Position Id</a>
+</div>*@
+<div>
+    <a asp-controller="Admin" asp-action="Index">Back to DashBoard</a>
+</div>

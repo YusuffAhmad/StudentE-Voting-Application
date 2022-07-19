@@ -1,0 +1,29 @@
+﻿@model STUDENTEVOTINGAPP.DTOs.AdminDto.AdminResponseModel
+<div>
+    <dl>
+        <dd>
+            ID
+        </dd>
+        <dt>
+            @Model.Data.ID
+        </dt>
+        <dd>
+            MatricNumber
+        </dd>
+        <dt>
+            @Model.Data.MatricNum
+        </dt>
+        <dd>
+            Password
+        </dd>
+        <dt>
+            @Model.Data.Password
+        </dt>
+    </dl>
+</div>
+<span>Are you sure you want to Delete this Admin?</span>
+<form asp-action="Delete">
+    <input type="hidden" asp-for="Data.ID" />
+    <input type="submit" value="Delete" class="btn btn-danger" />
+</form>
+<a asp-action="Index">DashBoard </a>

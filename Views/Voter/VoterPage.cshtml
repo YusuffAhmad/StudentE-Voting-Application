@@ -1,0 +1,19 @@
+﻿@using Microsoft.AspNetCore.Http;
+<div class="text text-center" style="align-content: center">
+    <h3 class="display-4">Welcome @Context.Session.GetString("UserName")</h3>
+    <h2>Your Voter Registration ID Is @Context.Session.GetString("VoterRegID") </h2>
+</div>
+<div class="table-responsive-xl">
+    <div style="display:flex; flex-direction:row; justify-content:space-between; ">
+        <ul>
+            <li> <a asp-controller="Candidate" asp-action="Create" style="color:white" class="btn btn-primary"> Contest</a></li>
+            <li> <a asp-controller="Candidate" asp-action="Edit" style="color:white" class="btn btn-primary"> Change Position</a></li>
+            <li> <a asp-controller="Vote" asp-action="CastVote" style="color:white" class="btn btn-primary"> Vote</a></li>
+            <li> <a asp-controller="Vote" asp-action="Index" style="color:white" class="btn btn-primary"> View Result</a></li>
+        </ul>
+
+    </div>
+</div>
+<div  class="text text-center" style="align-content: center">
+    <p> <a asp-action="LogOut" style="color:white" class="btn btn-primary">Logout</a></p>
+</div>

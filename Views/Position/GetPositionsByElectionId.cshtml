@@ -1,0 +1,36 @@
+﻿@model IList<STUDENTEVOTINGAPP.DTOs.PositionDto.PositionDto>
+<div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    ID
+                </th>
+                <th>
+                    Name
+                </th>
+                <th>
+                    Election Name
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var position in Model)
+            {
+                <tr>
+                    <th>
+                        @position.Id
+                    </th>
+                    <th>
+                        @position.Name 
+                    </th>
+                    <th>
+                        @position.ElectionName
+                    </th>
+                    <th>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+<div><a asp-controller="Admin" asp-action="Index">Go Back Dashboard</a></div>

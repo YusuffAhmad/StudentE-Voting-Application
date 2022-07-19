@@ -1,0 +1,36 @@
+﻿@model STUDENTEVOTINGAPP.DTOs.CandidateDto.CandidateDto
+<div>
+    <dl>
+        <dd>
+            ID
+        </dd>
+        <dt>
+            @Model.ID
+        </dt>
+        <dd>
+            FullName
+        </dd>
+        <dt>
+            @Model.FullName
+        </dt>
+        <dd>
+            MatricNum
+        </dd>
+        <dt>
+            @Model.MatricNum
+        </dt>
+        <dd>
+            Election Name
+        </dd>
+        <dt>
+            @Model.ElectionName
+        </dt>
+        <dd>
+            Position Name
+        </dd>
+        <dt>
+            @Model.PositionName
+        </dt>
+    </dl>
+</div>
+<div><a asp-controller="Candidate" asp-action="Index">Back to Dashboard</a></div>

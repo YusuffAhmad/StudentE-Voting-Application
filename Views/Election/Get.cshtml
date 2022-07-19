@@ -1,0 +1,30 @@
+﻿@model STUDENTEVOTINGAPP.DTOs.ElectionDto.ElectionDto
+<div>
+    <dl>
+        <dd>
+            ID
+        </dd>
+        <dt>
+            @Model.Id
+        </dt>
+        <dd>
+            Election Name
+        </dd>
+        <dt>
+            @Model.Name
+        </dt>
+        <dd>
+            Election Begins
+        </dd>
+        <dt>
+            @Model.ElectionOpenDate
+        </dt>
+        <dd>
+            Election Closes
+        </dd>
+        <dt>
+            @Model.ElectionCloseDate
+        </dt>
+    </dl>
+</div>
+<div><a asp-controller="Admin" asp-action="Index">Go Back Dashboard</a></div>

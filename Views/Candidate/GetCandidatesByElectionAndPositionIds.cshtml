@@ -1,0 +1,34 @@
+﻿@model IList<STUDENTEVOTINGAPP.DTOs.CandidateDto.CandidateDto>
+<div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    ID
+                </th>
+                <th>
+                    FullName
+                </th>
+                <th>
+                    Matric Number
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var candidate in Model)
+            {
+                <tr>
+                    <th>
+                        @candidate.ID
+                    </th>
+                    <th>
+                        @candidate.FullName
+                    </th>
+                    <th>
+                        @candidate.MatricNum
+                    </th>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

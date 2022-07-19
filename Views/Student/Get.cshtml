@@ -1,0 +1,52 @@
+﻿@model List<STUDENTEVOTINGAPP.Entities.Student>
+    <h1 class="text text-center" style="align-content: center">
+        Students
+    </h1>
+    <div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        ID
+                    </th>
+                    <th>
+                        FullName
+                    </th>
+                    <th>
+                        Matric Number
+                    </th>
+                    <th>
+                        Gender
+                    </th>
+                    <th>
+                        Level
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var students in Model)
+                {
+                    <tr>
+                        <th>
+                            @students.Id
+                        </th>
+                        <th>
+                            @students.FirstName @students.LastName
+                        </th>
+                        <th>
+                            @students.MatricNumber
+                        </th>
+                        <th>
+                            @students.Gender
+                        </th>
+                        <th>
+                            @students.Level
+                        </th>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <div>
+        <a asp-controller="Admin" asp-action="Index">Go Back Dashboard</a>
+    </div>

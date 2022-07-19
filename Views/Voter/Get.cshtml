@@ -1,0 +1,45 @@
+﻿@model STUDENTEVOTINGAPP.DTOs.VoterDto.VoterDto
+    <h1 class="text text-center" style="align-content: center">
+        Voters
+    </h1>
+    <div>
+        <dl>
+            <dd>
+                ID
+            </dd>
+            <dt>
+                @Model.Id
+            </dt>
+            <dd>
+                FullName
+            </dd>
+            <dt>
+                @Model.FullName
+            </dt>
+            <dd>
+                MatricNum
+            </dd>
+            <dt>
+                @Model.MatricNumber
+            </dt>
+            <dd>
+                Voter Registration ID
+            </dd>
+            <dt>
+                @Model.VoterRegId
+            </dt>
+            <dd>
+                Gender
+            </dd>
+            <dt>
+                @Model.Gender
+            </dt>
+            <dd>
+                Status
+            </dd>
+            <dt>
+                @Model.UserRole
+            </dt>
+        </dl>
+    </div>
+    <a asp-controller="Admin" asp-action="Index">Go Back Dashboard</a>

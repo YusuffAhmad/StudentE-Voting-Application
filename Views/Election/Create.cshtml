@@ -1,0 +1,48 @@
+﻿@model STUDENTEVOTINGAPP.DTOs.ElectionDto.ElectionDto
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create Election</h1>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            @if (ViewBag.Message != null)
+            {
+                <div style="color:red" font-weight: bolder; padding: 5px>
+                    <p class="alert alert-warning alert-dismissible" role="alert">@ViewBag.Message</p>
+                    <label style="text-align: center"> </label>
+                </div>
+            }
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input type="text" asp-for="Name" class="form-control" placeholder="ElectionName" required />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ElectionOpenDate" class="control-label"></label>
+                <input type="datetime-local" asp-for="ElectionOpenDate" class="form-control" placeholder="ElectionOpenDate" required />
+                <span asp-validation-for="ElectionOpenDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ElectionCloseDate" class="control-label"></label>
+                <input type="datetime-local" asp-for="ElectionCloseDate" class="form-control" placeholder="ElectionCloseDate" required />
+                <span asp-validation-for="ElectionCloseDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-controller="Admin" asp-action="Index">Back to DashBoard</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

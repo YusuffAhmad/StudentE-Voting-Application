@@ -1,0 +1,29 @@
+﻿@model STUDENTEVOTINGAPP.DTOs.CandidateDto.CandidateDto
+<div>
+    <dl>
+        <dd>
+            ID
+        </dd>
+        <dt>
+            @Model.ID
+        </dt>
+        <dd>
+            Name
+        </dd>
+        <dt>
+            @Model.FullName
+        </dt>
+        <dd>
+           Matric Number
+        </dd>
+        <dt>
+            @Model.MatricNum
+        </dt>
+    </dl>
+</div>
+<span>Are you sure you want to Delete this Candidate?</span>
+<form asp-action="Delete">
+    <input type="hidden" asp-for="ID" />
+    <input type="submit" value="Delete" class="btn btn-danger" />
+</form>
+<a asp-controller="Admin" asp-action="Index">DashBoard </a>

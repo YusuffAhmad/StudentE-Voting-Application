@@ -1,0 +1,75 @@
+﻿@model IList<STUDENTEVOTINGAPP.Entities.Admin>
+@using Microsoft.AspNetCore.Http;
+    <div class="text text-center" style="align-content: center">
+        <h1 class="display-1" >Admin DashBoard</h1>
+        <t2>Welcome @Context.Session.GetString("Name")
+             @if (ViewBag.Message != null)
+            {
+                <div style="color:red" font-weight: bolder; padding: 5px>
+                    <p class="alert alert-warning alert-dismissible" role="alert">@ViewBag.Message</p>
+                    <label style="text-align: center"> </label>
+                </div>
+            }
+        </t2>
+        <section>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            ID
+                        </th>
+                        <th>
+                            FullName
+                        </th>
+                        <th>
+                            Details
+                        </th>
+                        <th>
+                            Delete
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var admin in Model)
+                    {
+                        <tr>
+                            <th>
+                                @admin.Id
+                            </th>
+                            <th>
+                                @admin.FirstName @admin.LastName
+                            </th>
+                            <th>
+                                <a asp-action="Get" asp-route-id="@admin.Id" style="color:white" class="btn btn-primary">View</a>
+                            </th>
+                            <th>
+                                <a asp-action="Delete" asp-route-id="@admin.Id" style="color:white" class="btn btn-danger">Delete Admin</a>
+                            </th>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </section>
+        
+    </div>
+    <section>
+        <div style="display:flex; flex-direction:row">
+            <ul>
+                <li> <a asp-action="Create" style="color:white" class="btn btn-primary">Create Admin</a></li>
+                <li> <a asp-controller="Student" asp-action="Create" style="color:white" class="btn btn-primary">Add Students</a></li>
+                <li> <a asp-controller="Student" asp-action="Get" style="color:white" class="btn btn-primary">View Student List</a></li>
+                <li> <a asp-controller="Voter" asp-action="Index" style="color:white" class="btn btn-primary">Voters</a></li>
+                <li> <a asp-controller="Election" asp-action="Create" style="color:white" class="btn btn-primary">Add Election</a></li>
+                <li> <a asp-controller="Election" asp-action="Index" style="color:white" class="btn btn-primary">Elections</a></li>
+                <li> <a asp-controller="Position" asp-action="Create" style="color:white" class="btn btn-primary">Add  Positions</a></li>
+                <li> <a asp-controller="Position" asp-action="Index" style="color:white" class="btn btn-primary">Positions</a></li>
+                <li> <a asp-controller="Candidate" asp-action="Index" style="color:white" class="btn btn-primary">Candidates</a></li>
+                <li> <a asp-controller="Vote" asp-action="Index" style="color:white" class="btn btn-primary"> View Result</a></li>
+            </ul>
+                    
+        </div>
+    </section>
+    
+    <div  class="text text-center" style="align-content: center">
+        <p> <a asp-action="LogOut" style="color:white" class="btn btn-primary">Logout</a></p>
+    </div>

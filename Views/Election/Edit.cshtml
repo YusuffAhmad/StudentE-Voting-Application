@@ -1,0 +1,36 @@
+﻿@model STUDENTEVOTINGAPP.DTOs.ElectionDto.ElectionDto
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit Election</h1>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input type="text" asp-for="Name" class="form-control" placeholder="ElectionName" required />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ElectionOpenDate" class="control-label"></label>
+                <input type="datetime-local" asp-for="ElectionOpenDate" class="form-control" placeholder="ElectionOpenDate" required />
+                <span asp-validation-for="ElectionOpenDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ElectionCloseDate" class="control-label"></label>
+                <input type="datetime-local" asp-for="ElectionCloseDate" class="form-control" placeholder="ElectionCloseDate" required />
+                <span asp-validation-for="ElectionCloseDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Edit" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+<div>
+    <a asp-controller="Admin" asp-action="Index">Back to DashBoard</a>
+</div>
